@@ -4,39 +4,35 @@ import android.support.annotation.NonNull;
 
 import com.squareup.otto.Subscribe;
 
-import java.util.List;
-
+import sergio.splashbaseviewer.mvp.events.DownloadFailureEvent;
+import sergio.splashbaseviewer.mvp.events.DownloadFinishedEvent;
 import sergio.splashbaseviewer.mvp.model.SplashModel;
 import sergio.splashbaseviewer.mvp.view.SplashView;
-import sergio.splashbaseviewer.utils.models.SplashImage;
 
 /**
  * @author s.ruiz
  */
 
-public class SplashPresenter implements SplashModel.SplashServiceConsumer{
+public class SplashPresenter{
     @NonNull
     private SplashView view;
     @NonNull
     private SplashModel model;
 
-    public SplashPresenter(SplashView view) {
-        this.model = new SplashModel(this);
+    public SplashPresenter(SplashView view, SplashModel model) {
+        this.model = model;
         this.view = view;
-    }
 
-    @Subscribe
-    public void onFabSyncPressed(SplashView.FabSyncPressedEvent event) {
         model.startDownload();
     }
 
-    @Override
-    public void onDownloadFinished(List<SplashImage> images) {
-        view.setResul(images.toString().replace(',','*'));
+    @Subscribe
+    public void onDownloadFinishedEvent(DownloadFinishedEvent event) {
+        view.setResul(event.getImages().toString().replace(',','*'));
     }
 
-    @Override
-    public void onFailure(String errorMessage) {
-        view.setResul(errorMessage);
+    @Subscribe
+    public void onDownloadFailureEvent(DownloadFailureEvent event) {
+        view.setResul(event.getErrorMessage());
     }
 }

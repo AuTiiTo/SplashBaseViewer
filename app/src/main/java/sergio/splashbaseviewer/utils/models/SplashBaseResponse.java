@@ -6,9 +6,9 @@ import java.util.List;
  * @author s.ruiz
  */
 public class SplashBaseResponse {
-    private List<SplashImage> images;
+    private List<SplashImageResponse> images;
 
-    public List<SplashImage> getImages() {
+    public List<SplashImageResponse> getImages() {
         return images;
     }
 }

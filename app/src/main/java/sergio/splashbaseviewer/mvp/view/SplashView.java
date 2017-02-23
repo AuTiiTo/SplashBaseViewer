@@ -7,7 +7,6 @@ import com.squareup.otto.Bus;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import sergio.splashbaseviewer.R;
 
 /**
@@ -30,11 +29,4 @@ public class SplashView extends ActivityView {
         jsonMain.setText(result);
     }
 
-    @OnClick(R.id.fab_splash_sync)
-    public void onFabSyncPressed() {
-        bus.post(new FabSyncPressedEvent());
-    }
-
-    public static class FabSyncPressedEvent {
-    }
 }

@@ -4,7 +4,7 @@ package sergio.splashbaseviewer.utils.models;
  * @author s.ruiz
  */
 
-public class SplashImage {
+public class SplashImageResponse {
     private int id;
     private String url;
     private String large_url;
