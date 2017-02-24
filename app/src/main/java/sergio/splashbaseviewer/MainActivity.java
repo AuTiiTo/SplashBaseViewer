@@ -3,6 +3,7 @@ package sergio.splashbaseviewer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
+import sergio.splashbaseviewer.adapters.ImageContainerAdapter;
 import sergio.splashbaseviewer.mvp.model.SplashModel;
 import sergio.splashbaseviewer.mvp.presenter.SplashPresenter;
 import sergio.splashbaseviewer.mvp.view.SplashView;
