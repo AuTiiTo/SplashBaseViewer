@@ -5,7 +5,7 @@ package sergio.splashbaseviewer.mvp.events;
  */
 
 public class DownloadFailureEvent {
-    String errorMessage;
+    private String errorMessage;
 
     public DownloadFailureEvent(String errorMessage) {
         this.errorMessage = errorMessage;

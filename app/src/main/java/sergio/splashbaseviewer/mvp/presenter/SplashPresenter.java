@@ -28,11 +28,11 @@ public class SplashPresenter{
 
     @Subscribe
     public void onDownloadFinishedEvent(DownloadFinishedEvent event) {
-        view.setResul(event.getImages().toString().replace(',','*'));
+        view.setResult(event.getImages());
     }
 
     @Subscribe
     public void onDownloadFailureEvent(DownloadFailureEvent event) {
-        view.setResul(event.getErrorMessage());
+        view.showError(event.getErrorMessage());
     }
 }

@@ -35,7 +35,7 @@ public class SplashBaseServiceImpl implements SplashServiceInterface {
             public void onFailure(Call<SplashBaseResponse> call, Throwable t) {
                 String errorMessage = t.getMessage();
                 //BusEvent
-                BusProvider.getInstance().post(new DownloadFailureEvent(errorMessage));
+                BusProvider.getInstance().post(new DownloadFailureEvent(errorMessage != null ? errorMessage : "Timeout"));
             }
         });
     }

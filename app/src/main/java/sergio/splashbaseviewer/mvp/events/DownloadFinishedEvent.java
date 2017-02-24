@@ -9,7 +9,7 @@ import sergio.splashbaseviewer.utils.models.SplashImageResponse;
  */
 
 public class DownloadFinishedEvent {
-    List<SplashImageResponse> images;
+    private List<SplashImageResponse> images;
 
     public DownloadFinishedEvent(List<SplashImageResponse> images) {
         this.images = images;
